@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Список покупок</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="img/00_purchases_icon.jpg" type="image/x-icon" />
+</head>
+<body>
+  <div class="container">
+    <div class="time-and-date">
+      <time class="time">
+        <span id="hour">12</span>:<span id="minutes">35</span>:<span id="seconds">45</span>
+      </time>
+      <time class="date">
+        <span id="day">12</span><span id="month">Май</span><span id="year">2021</span>
+      </time>
+    </div>
+    <div class="add-purchases-and-list">
+      <div class="add-purchases-block">
+        <h2 class="heder-for-form">Выберите категорию и добавьте название товара:</h2>
+        <form action="#">
+          <div class="form-group">
+            <label>Категория:</label>
+            <select class="categories-list" name="category" id="category">
+              <option value="bakery">Булочная продукция</option>
+              <option value="grocery">Бакалея</option>
+              <option value="dairy">Молочная продукция</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Название товара:</label>
+            <input type="text" class="purchas" placeholder="Введите название товара">
+            <button id="add">Добавить</button>
+          </div>
+        </form>
+      </div>
+      <div class="purchases-list-block">
+        <h2 class="header-for-purchases-list">Список покупок:</h2>
+        <div class="purchases-list-block">
+          <ul class="purchases-categories-list">
+            <li class="purchases-category">Булочная продукция
+              <ul class="purchases-list-by-category">
+                <li class="purchas">
+                  <p class="purchas-name">Хлеб</p>
+                  <div class="addition-actions-block">
+                    <input type="checkbox" class="check-complete">
+                    <button class="edit">
+                      <img src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
+                    </button>
+                    <button class="delete">
+                      <img src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
+                    </button>
+                  </div>
+                </li>
+                <li class="purchas">Батон</li>
+                <li class="purchas">Булочки</li>
+              </ul>
+            </li>
+            <li class="purchases-category">Бакалея
+              <ul class="purchases-list-by-category">
+                <li class="purchas">Гречка</li>
+                <li class="purchas">Подсолнечное масло</li>
+                <li class="purchas">Орехи</li>
+              </ul>
+            </li>
+            <li class="purchases-category">Молочная продукция
+              <ul class="purchases-list-by-category">
+                <li class="purchas">Молоко</li>
+                <li class="purchas">Кефир</li>
+                <li class="purchas">Йогурт</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>
