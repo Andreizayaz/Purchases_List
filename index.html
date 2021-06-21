@@ -15,25 +15,29 @@
         <span id="hour">12</span>:<span id="minutes">35</span>:<span id="seconds">45</span>
       </time>
       <time class="date">
-        <span id="day">12</span><span id="month">Май</span><span id="year">2021</span>
+        <span id="day">12</span> <span id="month">Май</span> <span id="year">2021</span>
       </time>
     </div>
     <div class="add-purchases-and-list">
       <div class="add-purchases-block">
         <h2 class="heder-for-form">Выберите категорию и добавьте название товара:</h2>
-        <form action="#">
+        <form action="#" class="form-block">
           <div class="form-group">
-            <label>Категория:</label>
-            <select class="categories-list" name="category" id="category">
+            <label class="label-title">Категория:</label>
+            <div class="select-block">
+              <select class="categories-list-select" name="category" id="category">
               <option value="bakery">Булочная продукция</option>
               <option value="grocery">Бакалея</option>
               <option value="dairy">Молочная продукция</option>
             </select>
+            </div>
           </div>
           <div class="form-group">
-            <label>Название товара:</label>
-            <input type="text" class="purchas" placeholder="Введите название товара">
+            <label class="label-title">Название товара:</label>
+            <div class="input-and-button">
+              <input type="text" class="purchas-input" placeholder="Введите название товара">
             <button id="add">Добавить</button>
+            </div>
           </div>
         </form>
       </div>
@@ -164,7 +168,6 @@
           </ul>
         </div>
       </div>
-      
     </div>
   </div>
 </body>

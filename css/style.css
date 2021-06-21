@@ -1,1 +1,126 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: Roboto, Arial, sans-serif;
+  background-image: linear-gradient(45deg, orange, green);
+  background-color: #B9FFF6;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  width: 80%;
+  min-width: 320px;
+}
+
+.time-and-date, .add-purchases-and-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.time-and-date, .add-purchases-and-list {
+  width: 100%;
+}
+
+.time-and-date {
+  margin-bottom: 80px;
+  color: #FFF;
+  font-weight: 700;
+}
+
+.time, .date {
+  text-align: center;
+}
+
+.time {
+  margin-bottom: 10px;
+  font-size: 2.1rem;
+}
+
+.date {
+  font-size: 3rem;
+}
+
+.add-purchases-block {
+  margin-bottom: 50px;
+}
+
+.heder-for-form, .header-for-purchases-list {
+  margin-bottom: 30px;
+  color: #FFF;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.form-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  margin-bottom: 20px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.label-title {
+  width: 20%;
+  color: #FFF;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.select-block, .input-and-button {
+  width: 70%;
+}
+/*# sourceMappingURL=style.css.map */
