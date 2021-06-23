@@ -69,7 +69,7 @@ text-align: center;
   display:flex;
   flex-direction: column;
   margin: 0 auto;
-  width:80%;
+  width:100%;
 }
 
 .form-group{
@@ -93,4 +93,108 @@ text-align: center;
 
 .select-block, .input-and-button{
   width:70%;
+}
+
+.categories-list-select, .purchas-input{
+  padding:10px;
+  width:70%;
+  font-size: 1.2rem;
+  word-wrap: break-word;
+  transition: all 1s;
+
+  &:hover{
+    background-color: #FFCD7D;
+    cursor:pointer;
+  }
+}
+
+.option-item{
+  padding:5px;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.purchas-input{
+  margin-right:20px;
+  border:none;
+  outline:none;
+
+  &:hover{
+    cursor:text;
+  }
+}
+
+.btn{
+  border:none;
+  background-color: transparent;
+  cursor:pointer;
+  outline:none;
+}
+
+.btn-add{
+  padding:10px;
+  color:#FFF;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 10px;
+  background-color: #EAB88A;
+  transition: all 1s;
+
+  &:hover{
+    background-color: #FFCD7D;
+  }
+}
+
+.purchases-list-block{
+  margin:0 auto;
+  width:80%;
+}
+
+.purchases-categories-list, .purchases-list-by-category{
+  width:100%;
+  background-color: #91FFE7;
+}
+
+.purchases-category, .purchas{
+  list-style: none;
+}
+
+.purchases-category-header{
+  padding:10px;
+  font-size: 1.2rem;
+  background-color: #FFDA37;
+}
+
+.purchas{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding:10px;
+  background-color: #FFF;
+}
+
+.purchas-name{
+  width:80%;
+}
+
+.addition-actions-block{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  padding:0 10px;
+  width:20%;
+}
+
+.btn-edit, .btn-delete{
+  height:20px;
+  width:20px;
+}
+
+.insider-image{
+  height:100%;
+  max-height: 100%;
+  width:100%;
+  max-width: 100%;
 }

@@ -26,9 +26,9 @@
             <label class="label-title">Категория:</label>
             <div class="select-block">
               <select class="categories-list-select" name="category" id="category">
-              <option value="bakery">Булочная продукция</option>
-              <option value="grocery">Бакалея</option>
-              <option value="dairy">Молочная продукция</option>
+              <option class="option-item" value="bakery">Булочная продукция</option>
+              <option class="option-item" value="grocery">Бакалея</option>
+              <option class="option-item" value="dairy">Молочная продукция</option>
             </select>
             </div>
           </div>
@@ -36,7 +36,7 @@
             <label class="label-title">Название товара:</label>
             <div class="input-and-button">
               <input type="text" class="purchas-input" placeholder="Введите название товара">
-            <button id="add">Добавить</button>
+            <button class="btn btn-add" id="add">Добавить</button>
             </div>
           </div>
         </form>
@@ -45,17 +45,18 @@
         <h2 class="header-for-purchases-list">Список покупок:</h2>
         <div class="purchases-list-block">
           <ul class="purchases-categories-list">
-            <li class="purchases-category">Булочная продукция
+            <li class="purchases-category">
+              <p class="purchases-category-header">Булочная продукция</p>
               <ul class="purchases-list-by-category">
                 <li class="purchas">
                   <p class="purchas-name">Хлеб</p>
                   <div class="addition-actions-block">
                     <input type="checkbox" class="check-complete">
-                    <button class="edit">
-                      <img src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
+                    <button class="btn btn-edit">
+                      <img class="insider-image"src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
                     </button>
-                    <button class="delete">
-                      <img src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
+                    <button class="btn btn-delete">
+                      <img class="insider-image"src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
                     </button>
                   </div>
                 </li>
@@ -63,10 +64,10 @@
                   <p class="purchas-name">Батон</p>
                   <div class="addition-actions-block">
                     <input type="checkbox" class="check-complete">
-                    <button class="edit">
+                    <button class="btn btn-edit">
                       <img src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
                     </button>
-                    <button class="delete">
+                    <button class="btn btn-delete">
                       <img src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
                     </button>
                   </div>
@@ -75,10 +76,10 @@
                   <p class="purchas-name">Булочки</p>
                   <div class="addition-actions-block">
                     <input type="checkbox" class="check-complete">
-                    <button class="edit">
+                    <button class="btn btn-edit">
                       <img src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
                     </button>
-                    <button class="delete">
+                    <button class="btn btn-delete">
                       <img src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
                     </button>
                   </div>
@@ -91,10 +92,10 @@
                   <p class="purchas-name">Гречка</p>
                   <div class="addition-actions-block">
                     <input type="checkbox" class="check-complete">
-                    <button class="edit">
+                    <button class="btn btn-edit">
                       <img src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
                     </button>
-                    <button class="delete">
+                    <button class="btn btn-delete">
                       <img src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
                     </button>
                   </div>
@@ -103,10 +104,10 @@
                   <p class="purchas-name">Подсолнечное масло</p>
                   <div class="addition-actions-block">
                     <input type="checkbox" class="check-complete">
-                    <button class="edit">
+                    <button class="btn btn-edit">
                       <img src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
                     </button>
-                    <button class="delete">
+                    <button class="btn btn-delete">
                       <img src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
                     </button>
                   </div>
@@ -115,10 +116,10 @@
                   <p class="purchas-name">Орехи</p>
                   <div class="addition-actions-block">
                     <input type="checkbox" class="check-complete">
-                    <button class="edit">
+                    <button class="btn btn-edit">
                       <img src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
                     </button>
-                    <button class="delete">
+                    <button class="btn btn-delete">
                       <img src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
                     </button>
                   </div>
@@ -131,10 +132,10 @@
                   <p class="purchas-name">Молоко</p>
                   <div class="addition-actions-block">
                     <input type="checkbox" class="check-complete">
-                    <button class="edit">
+                    <button class="btn btn-edit">
                       <img src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
                     </button>
-                    <button class="delete">
+                    <button class="btn btn-delete">
                       <img src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
                     </button>
                   </div>
@@ -143,10 +144,10 @@
                   <p class="purchas-name">Кефир</p>
                   <div class="addition-actions-block">
                     <input type="checkbox" class="check-complete">
-                    <button class="edit">
+                    <button class="btn btn-edit">
                       <img src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
                     </button>
-                    <button class="delete">
+                    <button class="btn btn-delete">
                       <img src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
                     </button>
                   </div>
@@ -155,10 +156,10 @@
                   <p class="purchas-name">Йогурт</p>
                   <div class="addition-actions-block">
                     <input type="checkbox" class="check-complete">
-                    <button class="edit">
+                    <button class="btn btn-edit">
                       <img src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
                     </button>
-                    <button class="delete">
+                    <button class="btn btn-delete">
                       <img src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
                     </button>
                   </div>

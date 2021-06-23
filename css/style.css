@@ -89,7 +89,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
 }
 
 .form-group {
@@ -122,5 +122,125 @@ body {
 
 .select-block, .input-and-button {
   width: 70%;
+}
+
+.categories-list-select, .purchas-input {
+  padding: 10px;
+  width: 70%;
+  font-size: 1.2rem;
+  word-wrap: break-word;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.categories-list-select:hover, .purchas-input:hover {
+  background-color: #FFCD7D;
+  cursor: pointer;
+}
+
+.option-item {
+  padding: 5px;
+}
+
+.option-item:hover {
+  cursor: pointer;
+}
+
+.purchas-input {
+  margin-right: 20px;
+  border: none;
+  outline: none;
+}
+
+.purchas-input:hover {
+  cursor: text;
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-add {
+  padding: 10px;
+  color: #FFF;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 10px;
+  background-color: #EAB88A;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.btn-add:hover {
+  background-color: #FFCD7D;
+}
+
+.purchases-list-block {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.purchases-categories-list, .purchases-list-by-category {
+  width: 100%;
+  background-color: #91FFE7;
+}
+
+.purchases-category, .purchas {
+  list-style: none;
+}
+
+.purchases-category-header {
+  padding: 10px;
+  font-size: 1.2rem;
+  background-color: #FFDA37;
+}
+
+.purchas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #FFF;
+}
+
+.purchas-name {
+  width: 80%;
+}
+
+.addition-actions-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 10px;
+  width: 20%;
+}
+
+.btn-edit, .btn-delete {
+  height: 20px;
+  width: 20px;
+}
+
+.insider-image {
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+  max-width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
