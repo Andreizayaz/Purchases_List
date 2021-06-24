@@ -21,6 +21,12 @@ body {
   background-color: #B9FFF6;
 }
 
+@media (max-width: 400px) {
+  body {
+    padding: 10px 0;
+  }
+}
+
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -35,6 +41,19 @@ body {
   margin: 0 auto;
   max-width: 80%;
   min-width: 320px;
+}
+
+@media (max-width: 800px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: 5px;
+    max-width: 95%;
+  }
 }
 
 .time-and-date, .add-purchases-and-list {
@@ -60,6 +79,12 @@ body {
   font-weight: 700;
 }
 
+@media (max-width: 800px) {
+  .time-and-date {
+    margin-bottom: 35px;
+  }
+}
+
 .time, .date {
   text-align: center;
 }
@@ -73,6 +98,12 @@ body {
   font-size: 3rem;
 }
 
+@media (max-width: 800px) {
+  .date {
+    font-size: 2.5rem;
+  }
+}
+
 .add-purchases-block {
   margin-bottom: 50px;
 }
@@ -82,6 +113,12 @@ body {
   color: #FFF;
   font-size: 2rem;
   text-align: center;
+}
+
+@media (max-width: 600px) {
+  .heder-for-form, .header-for-purchases-list {
+    font-size: 1.8rem;
+  }
 }
 
 .form-block {
@@ -94,6 +131,12 @@ body {
           flex-direction: column;
   margin: 0 auto;
   width: 80%;
+}
+
+@media (max-width: 1000px) {
+  .form-block {
+    width: 100%;
+  }
 }
 
 .form-group {
@@ -117,6 +160,18 @@ body {
   margin-bottom: 0;
 }
 
+@media (max-width: 800px) {
+  .form-group {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .label-title {
   width: 20%;
   color: #FFF;
@@ -124,8 +179,23 @@ body {
   font-weight: 700;
 }
 
+@media (max-width: 800px) {
+  .label-title {
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
 .select-block, .input-and-button {
   width: 70%;
+}
+
+@media (max-width: 800px) {
+  .select-block, .input-and-button {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .categories-list-select, .purchas-input {
@@ -142,6 +212,12 @@ body {
   cursor: pointer;
 }
 
+@media (max-width: 800px) {
+  .categories-list-select, .purchas-input {
+    width: 80%;
+  }
+}
+
 .option-item {
   padding: 5px;
 }
@@ -151,13 +227,24 @@ body {
 }
 
 .purchas-input {
-  margin-right: 20px;
   border: none;
   outline: none;
 }
 
 .purchas-input:hover {
   cursor: text;
+}
+
+.button-form-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .btn {
@@ -186,6 +273,12 @@ body {
   margin: 0 auto;
   width: 80%;
   max-width: 1200px;
+}
+
+@media (max-width: 1000px) {
+  .purchases-list-block {
+    width: 100%;
+  }
 }
 
 .purchases-categories-list {
@@ -256,9 +349,22 @@ body {
   max-width: 120px;
 }
 
+@media (max-width: 400px) {
+  .addition-actions-block {
+    width: 35%;
+  }
+}
+
 .check-complete {
   height: 20px;
   width: 20px;
+}
+
+@media (max-width: 400px) {
+  .check-complete {
+    height: 15px;
+    width: 15px;
+  }
 }
 
 .btn-edit, .btn-delete {
@@ -271,6 +377,13 @@ body {
 .btn-edit:hover, .btn-delete:hover {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+
+@media (max-width: 400px) {
+  .btn-edit, .btn-delete {
+    height: 20px;
+    width: 20px;
+  }
 }
 
 /*.btn-edit:hover{
