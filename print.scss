@@ -1,0 +1,24 @@
+body{
+  background-color: transparent;
+}
+
+.add-purchases-block, .addition-actions-block{
+  display:none;
+}
+
+.purchases-categories-list, .purchases-category, .purchas-name{
+  border:1px solid #91FFE7;
+  border-radius: 0;
+}
+
+.purchases-category-header, .purchas{
+  border-radius:0;
+}
+
+.purchas-name{
+  padding:10px;
+}
+
+.purchas{
+  margin:0;
+}
