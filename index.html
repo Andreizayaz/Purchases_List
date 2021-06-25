@@ -8,40 +8,41 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/print.css" media="print">
     <link rel="shortcut icon" href="img/00_purchases_icon.jpg" type="image/x-icon" />
-    <script src="js/index.js" type="module"></script>
+    <script src="js/index.js" type="module" defer></script>
 </head>
 <body>
   <div class="container">
     <div class="time-and-date">
       <time class="time">
-        
       </time>
       <time class="date">
-        <!-- <span id="weekDay">Пятница</span>, <span id="day">12</span> <span id="month">Мая</span> <span id="year">2021</span> -->
       </time>
     </div>
     <div class="add-purchases-and-list">
       <div class="add-purchases-block">
         <h2 class="heder-for-form">Выберите категорию и добавьте название товара:</h2>
         <form action="#" class="form-block">
-          <div class="form-group">
+          <div class="form-input-data-block">
+            <div class="form-group">
             <label class="label-title">Категория:</label>
             <div class="select-block">
               <select class="categories-list-select" name="category" id="category">
-              <option class="option-item" value="bakery">Булочная продукция</option>
-              <option class="option-item" value="grocery">Бакалея</option>
-              <option class="option-item" value="dairy">Молочная продукция</option>
+              <option class="option-item" value="Булочная продукция">Булочная продукция</option>
+              <option class="option-item" value="Бакалея">Бакалея</option>
+              <option class="option-item" value="Молочная продукция">Молочная продукция</option>
             </select>
             </div>
           </div>
           <div class="form-group">
             <label class="label-title">Название товара:</label>
             <div class="input-and-button">
-              <input type="text" class="purchas-input" placeholder="Введите название товара">
+              <input name="purchase-name" type="text" class="purchas-input" placeholder="Введите название товара">
             </div>
           </div>
+          </div>
+          
           <div class="form-group button-form-section">
-            <button class="btn btn-add" id="add">Добавить</button>
+            <button class="btn btn-add" id="add" disabled>Добавить</button>
           </div>
         </form>
       </div>

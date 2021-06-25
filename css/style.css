@@ -172,6 +172,10 @@ body {
   }
 }
 
+.form-input-data-block {
+  margin-bottom: 20px;
+}
+
 .label-title {
   width: 20%;
   color: #FFF;
@@ -269,6 +273,10 @@ body {
   background-color: #FFCD7D;
 }
 
+.btn-add:disabled {
+  cursor: default;
+}
+
 .purchases-list-block {
   margin: 0 auto;
   width: 80%;
@@ -308,7 +316,7 @@ body {
 
 .purchases-category-header {
   padding: 10px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   background-color: #FFDA37;
 }
 
