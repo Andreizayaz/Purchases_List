@@ -1,18 +1,34 @@
 'use strict'
 
-export const setPurchaseData = ({ target: { name }, target: { value } }, obj, arr) => {  
+export const setPurchaseData = ({ target: { name }, target: { value } }, obj, btn) => {  
   obj[name] = value;
+  if (name === 'purchase-name') {
+    if ( obj[name].trim()) {
+      btn.disabled = false;
+      return;
+    }
+    btn.disabled = true;
+  }
 }
 
-// export const 
-
-export const addPurchaseItem = (e, obj, arr) => {
-  e.preventDefault();
-  if (!obj['purchase-name'].trim()) {
-    document.querySelector('input').insertAdjacentHTML('afterend', '<p>Поле "Название продукта" не может быть пустым</p>');
+export const checkIfInputFill = ({target,target:{value}, target:{nextElementSibling}},btn) => {
+  if (!value.trim() && nextElementSibling===null) {
+    target.insertAdjacentHTML('afterend', '<p class="dangerous-text">Поле "Название продукта" не может быть пустым!!!</p>');
     return;
   }
-  arr.push(obj);
+
+  if (value.trim()) {
+    if (nextElementSibling) {
+      nextElementSibling.remove();
+    }
+    btn.disabled = false;
+    return;
+  }
+}
+
+export const addPurchaseItem = (e, obj, arr) => {  
+  e.preventDefault(); 
+  arr.push(JSON.stringify(obj));
   localStorage.setItem('purchases', JSON.stringify(arr));
   obj['category']= '';
   obj['purchase-name'] = '';

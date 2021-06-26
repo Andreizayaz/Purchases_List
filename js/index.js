@@ -1,11 +1,11 @@
 'use strict'
 
 import { showTimeAndDate } from './timeAndDate.js';
-import { setPurchaseData } from './formActions.js';
+import { setPurchaseData, checkIfInputFill, addPurchaseItem } from './formActions.js';
 
 const time = document.querySelector(".time");
 const date = document.querySelector(".date")
-const inputDataBlock = document.querySelector(".form-input-data-block");
+const selectField = document.querySelector(".categories-list-select");
 const inputField = document.querySelector(".purchas-input");
 const addBtn = document.querySelector("#add");
 
@@ -14,5 +14,7 @@ const purchases = [];
 
 setTimeout(() => showTimeAndDate(time, date), 1000);
 
-inputDataBlock.addEventListener('change', (e) => setPurchaseData(e, purchaseObject));
-addBtn.addEventListener('click', (e, obj, arr) => setPurchaseData(e, obj, arr));
+selectField.addEventListener('change', (e) => setPurchaseData(e, purchaseObject));
+inputField.addEventListener('input', (e) => setPurchaseData(e, purchaseObject, addBtn));
+inputField.addEventListener('focusout', (e) => checkIfInputFill(e, addBtn));
+addBtn.addEventListener('click', (e) => addPurchaseItem(e, purchaseObject, purchases));
