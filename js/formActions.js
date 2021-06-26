@@ -1,6 +1,6 @@
 'use strict'
 
-export const setPurchaseData = ({ target: { name }, target: { value } }, obj, btn) => {  
+export const setPurchaseData = ({ target: { name }, target: { value } }, obj, btn) => { 
   obj[name] = value;
   if (name === 'purchase-name') {
     if ( obj[name].trim()) {
@@ -27,10 +27,8 @@ export const checkIfInputFill = ({target,target:{value}, target:{nextElementSibl
 }
 
 export const addPurchaseItem = (e, obj, arr) => {  
-  e.preventDefault(); 
+  e.preventDefault();
   arr.push(JSON.stringify(obj));
   localStorage.setItem('purchases', JSON.stringify(arr));
-  obj['category']= '';
-  obj['purchase-name'] = '';
   return;
 }
