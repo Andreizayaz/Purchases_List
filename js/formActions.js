@@ -26,9 +26,10 @@ export const checkIfInputFill = ({target,target:{value}, target:{nextElementSibl
   }
 }
 
-export const addPurchaseItem = (e, obj, arr) => {  
+export const addPurchaseItem = (e, obj, arr, inputField) => {  
   e.preventDefault();
   arr.push(JSON.stringify(obj));
   localStorage.setItem('purchases', JSON.stringify(arr));
+  inputField.value = '';
   return;
 }
