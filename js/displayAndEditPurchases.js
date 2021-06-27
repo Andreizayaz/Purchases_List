@@ -5,7 +5,7 @@ export const displayPurchasesList = (purchasesArray, purchasesCategoriesList) =>
     if (purchasesCategoriesList.previousElementSibling) {
       purchasesCategoriesList.previousElementSibling.remove();
     }
-    purchasesArray = purchasesArray.map(i => JSON.parse(i)).sort((a,b)=>sortArrayByPropertyName(a, b));
+    //purchasesArray = purchasesArray.sort((a,b)=>sortArrayByPropertyName(a, b));
     console.log(purchasesArray);
     return;
   }

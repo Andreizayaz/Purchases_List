@@ -1,8 +1,10 @@
 'use strict'
 
+import { categories } from './data.js';
 import { showTimeAndDate } from './timeAndDate.js';
 import { setPurchaseData, checkIfInputFill, addPurchaseItem} from './formActions.js';
 import { displayPurchasesList } from './displayAndEditPurchases.js';
+import { initCategoriesObject } from './initCategoriesList.js';
 
 const time = document.querySelector(".time");
 const date = document.querySelector(".date");
@@ -10,6 +12,8 @@ const selectField = document.querySelector(".categories-list-select");
 const inputField = document.querySelector(".purchas-input");
 const addBtn = document.querySelector("#add");
 const purchasesCategoriesList = document.querySelector('.purchases-categories-list');
+
+//const purchaseObject = initCategoriesObject(categories);
 
 const purchaseObject = {
   category: selectField.value,
