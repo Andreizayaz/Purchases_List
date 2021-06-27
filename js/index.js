@@ -11,7 +11,7 @@ const date = document.querySelector(".date");
 const selectField = document.querySelector(".categories-list-select");
 const inputField = document.querySelector(".purchas-input");
 const addBtn = document.querySelector("#add");
-const purchasesCategoriesList = document.querySelector('.purchases-categories-list');
+export const purchasesCategoriesList = document.querySelector('.purchases-categories-list');
 
 const purchaseObject = {
   category: selectField.value,

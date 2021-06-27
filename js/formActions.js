@@ -1,4 +1,5 @@
 'use strict'
+import { displayPurchasesList } from './displayAndEditPurchases.js';
 
 export const setPurchaseData = ({ target: { name }, target: { value } }, obj, btn) => { 
   obj[name] = value;
@@ -37,9 +38,12 @@ export const addPurchaseItem = (e, obj, arr, inputField) => {
   } else {
     arr.push({ [obj.category]: [obj['purchase-name']]});
   }
-  arr.sort(sortArrayByPropertyName)
+  arr.sort(sortArrayByPropertyName);
   localStorage.setItem('purchases', JSON.stringify(arr));
   inputField.value = '';
+  let listByCategoriesNode = document.querySelector('.purchases-categories-list');
+  listByCategoriesNode.innerHTML = '';
+  displayPurchasesList(arr, listByCategoriesNode);
   return;
 }
 
