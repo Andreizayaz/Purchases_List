@@ -1,8 +1,7 @@
 'use strict'
 
-export const initCategoriesObject = (categories) => {
-  const objectOfCategories = {};
-
-  categories.sort().forEach(item => objectOfCategories[item] = []);
-  return objectOfCategories;
+export const initSelectListOptions = (categories, selectField) => {
+  categories.forEach(item=>{
+    selectField.insertAdjacentHTML('beforeend', `<option class="option-item" value="${item}">${item}</option>`)
+  })
 }

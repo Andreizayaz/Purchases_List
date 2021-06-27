@@ -35,13 +35,20 @@ export const addPurchaseItem = (e, obj, arr, inputField) => {
       arr.push({ [obj.category]: [obj['purchase-name']]});
     }
   } else {
-    /*arr.map(item => item.hasOwnProperty(obj.category) ? item[obj.category].push(obj['purchase-name'])
-      : arr.push({ [obj.category]: [obj['purchase-name']] }));*/
     arr.push({ [obj.category]: [obj['purchase-name']]});
   }
-  
-  //arr.push(JSON.stringify(obj));
+  arr.sort(sortArrayByPropertyName)
   localStorage.setItem('purchases', JSON.stringify(arr));
   inputField.value = '';
   return;
+}
+
+const sortArrayByPropertyName = (firstItem, secondItem) => {
+  if (Object.keys(firstItem)[0] > Object.keys(secondItem)[0]) {
+    return 1;
+  }
+  if (Object.keys(firstItem)[0] < Object.keys(secondItem)[0]) {
+    return -1;
+  }
+  return 0;
 }

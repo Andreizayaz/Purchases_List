@@ -4,7 +4,7 @@ import { categories } from './data.js';
 import { showTimeAndDate } from './timeAndDate.js';
 import { setPurchaseData, checkIfInputFill, addPurchaseItem} from './formActions.js';
 import { displayPurchasesList } from './displayAndEditPurchases.js';
-import { initCategoriesObject } from './initCategoriesList.js';
+import { initSelectListOptions } from './initCategoriesList.js';
 
 const time = document.querySelector(".time");
 const date = document.querySelector(".date");
@@ -13,8 +13,6 @@ const inputField = document.querySelector(".purchas-input");
 const addBtn = document.querySelector("#add");
 const purchasesCategoriesList = document.querySelector('.purchases-categories-list');
 
-//const purchaseObject = initCategoriesObject(categories);
-
 const purchaseObject = {
   category: selectField.value,
 };
@@ -22,8 +20,9 @@ let purchasesArray= JSON.parse(localStorage.getItem('purchases'))||[];
 
 setTimeout(() => showTimeAndDate(time, date), 1000);
 
+initSelectListOptions(categories, selectField);
+
 displayPurchasesList(purchasesArray, purchasesCategoriesList);
-//getInitDataForArray(purchasesArray);
 
 selectField.addEventListener('change', (e) => setPurchaseData(e, purchaseObject));
 inputField.addEventListener('input', (e) => setPurchaseData(e, purchaseObject, addBtn));

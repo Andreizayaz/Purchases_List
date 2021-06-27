@@ -5,20 +5,10 @@ export const displayPurchasesList = (purchasesArray, purchasesCategoriesList) =>
     if (purchasesCategoriesList.previousElementSibling) {
       purchasesCategoriesList.previousElementSibling.remove();
     }
-    //purchasesArray = purchasesArray.sort((a,b)=>sortArrayByPropertyName(a, b));
+    purchasesArray = purchasesArray.sort();
     console.log(purchasesArray);
     return;
   }
 
   purchasesCategoriesList.insertAdjacentHTML('beforebegin', '<p class="text-info">Список продуктов для покупки пуст</p>')
-}
-
-const sortArrayByPropertyName = (firstItem, secondItem) => {
-  if (firstItem.category > secondItem.category) {
-    return 1;
-  }
-  if (firstItem.category < secondItem.category) {
-    return -1;
-  }
-  return 0;
 }
