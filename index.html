@@ -26,17 +26,13 @@
             <div class="form-group">
             <label class="label-title">Категория:</label>
             <div class="select-block">
-              <select class="categories-list-select" name="category" id="category">
-              <!-- <option class="option-item" value="Булочная продукция">Булочная продукция</option>
-              <option class="option-item" value="Бакалея">Бакалея</option>
-              <option class="option-item" value="Молочная продукция">Молочная продукция</option> -->
-            </select>
+              <select class="categories-list-select" name="category" id="category"></select>
             </div>
           </div>
           <div class="form-group">
             <label class="label-title">Название товара:</label>
             <div class="input-and-button">
-              <input name="purchase-name" type="text" class="purchas-input" placeholder="Введите название товара">
+              <input name="purchase-name" type="text" class="purchas-input" placeholder="Введите название товара" spellcheck="true">
             </div>
           </div>
           </div>
@@ -49,131 +45,7 @@
       <div class="purchases-list-block">
         <h2 class="header-for-purchases-list">Список покупок:</h2>
         <div class="purchases-list-block">
-          <ul class="purchases-categories-list">
-            <!-- <li class="purchases-category">
-              <h3 class="purchases-category-header">Булочная продукция</h3>
-              <ul class="purchases-list-by-category">
-                <li class="purchas">
-                  <p class="purchas-name">Хлеб</p>
-                  <div class="addition-actions-block">
-                    <input type="checkbox" class="check-complete">
-                    <button class="btn btn-edit">
-                      <img class="insider-image" src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
-                    </button>
-                    <button class="btn btn-delete">
-                      <img class="insider-image"src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
-                    </button>
-                  </div>
-                </li>
-                <li class="purchas">
-                  <p class="purchas-name">Батон</p>
-                  <div class="addition-actions-block">
-                    <input type="checkbox" class="check-complete">
-                    <button class="btn btn-edit">
-                      <img class="insider-image" src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
-                    </button>
-                    <button class="btn btn-delete">
-                      <img class="insider-image" src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
-                    </button>
-                  </div>
-                </li>
-                <li class="purchas">
-                  <p class="purchas-name">Булочки</p>
-                  <div class="addition-actions-block">
-                    <input type="checkbox" class="check-complete">
-                    <button class="btn btn-edit">
-                      <img class="insider-image" src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
-                    </button>
-                    <button class="btn btn-delete">
-                      <img class="insider-image" src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
-                    </button>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <li class="purchases-category">
-              <h3 class="purchases-category-header">Бакалея</h3>
-              <ul class="purchases-list-by-category">
-                <li class="purchas">
-                  <p class="purchas-name">Гречка</p>
-                  <div class="addition-actions-block">
-                    <input type="checkbox" class="check-complete">
-                    <button class="btn btn-edit">
-                      <img class="insider-image" src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
-                    </button>
-                    <button class="btn btn-delete">
-                      <img class="insider-image" src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
-                    </button>
-                  </div>
-                </li>
-                <li class="purchas">
-                  <p class="purchas-name">Подсолнечное масло</p>
-                  <div class="addition-actions-block">
-                    <input type="checkbox" class="check-complete">
-                    <button class="btn btn-edit">
-                      <img class="insider-image" src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
-                    </button>
-                    <button class="btn btn-delete">
-                      <img class="insider-image" src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
-                    </button>
-                  </div>
-                </li>
-                <li class="purchas">
-                  <p class="purchas-name">Орехи</p>
-                  <div class="addition-actions-block">
-                    <input type="checkbox" class="check-complete">
-                    <button class="btn btn-edit">
-                      <img class="insider-image" src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
-                    </button>
-                    <button class="btn btn-delete">
-                      <img class="insider-image" src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
-                    </button>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <li class="purchases-category">
-              <h3 class="purchases-category-header">Молочная продукция</h3>
-              <ul class="purchases-list-by-category">
-                <li class="purchas">
-                  <p class="purchas-name">Молоко</p>
-                  <div class="addition-actions-block">
-                    <input type="checkbox" class="check-complete">
-                    <button class="btn btn-edit">
-                      <img class="insider-image" src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
-                    </button>
-                    <button class="btn btn-delete">
-                      <img class="insider-image" src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
-                    </button>
-                  </div>
-                </li>
-                <li class="purchas">
-                  <p class="purchas-name">Кефир</p>
-                  <div class="addition-actions-block">
-                    <input type="checkbox" class="check-complete">
-                    <button class="btn btn-edit">
-                      <img class="insider-image" src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
-                    </button>
-                    <button class="btn btn-delete">
-                      <img class="insider-image" src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
-                    </button>
-                  </div>
-                </li>
-                <li class="purchas">
-                  <p class="purchas-name">Йогурт</p>
-                  <div class="addition-actions-block">
-                    <input type="checkbox" class="check-complete">
-                    <button class="btn btn-edit">
-                      <img class="insider-image" src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
-                    </button>
-                    <button class="btn btn-delete">
-                      <img class="insider-image" src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
-                    </button>
-                  </div>
-                </li>
-              </ul>
-            </li> -->
-          </ul>
+          <ul class="purchases-categories-list"></ul>
         </div>
       </div>
     </div>
