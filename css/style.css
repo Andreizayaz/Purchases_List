@@ -423,4 +423,8 @@ body {
   background-color: #8CA9FF;
   border-radius: 10px;
 }
+
+.text-through {
+  text-decoration: line-through;
+}
 /*# sourceMappingURL=style.css.map */

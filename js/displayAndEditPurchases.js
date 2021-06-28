@@ -16,11 +16,11 @@ export const displayPurchasesList = (purchasesArray, purchasesCategoriesList) =>
         listByCategory.insertAdjacentHTML('beforeend', ` <li class="purchas">
                   <p class="purchas-name">${item}</p>
                   <div class="addition-actions-block">
-                    <input type="checkbox" class="check-complete">
-                    <button class="btn btn-edit">
+                    <input type="checkbox" class="check-complete" name = "check-complete">
+                    <button class="btn btn-edit" name="edit">
                       <img class="insider-image" src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
                     </button>
-                    <button class="btn btn-delete">
+                    <button class="btn btn-delete" name="delete">
                       <img class="insider-image"src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
                     </button>
                   </div>
@@ -32,4 +32,15 @@ export const displayPurchasesList = (purchasesArray, purchasesCategoriesList) =>
   }
 
   purchasesCategoriesList.insertAdjacentHTML('beforebegin', '<p class="text-info">Список продуктов для покупки пуст</p>')
+}
+
+export const editPurchasesItems = (e, purchasesArray) => {
+  switch (e.target.name) {
+    case "check-complete":
+      e.target.closest('li').classList.toggle('text-through');
+      break;
+  
+    default:
+      break;
+  }
 }
