@@ -18,10 +18,10 @@ export const displayPurchasesList = (purchasesArray, purchasesCategoriesList) =>
                   <div class="addition-actions-block">
                     <input type="checkbox" class="check-complete" name = "check-complete">
                     <button class="btn btn-edit" name="edit">
-                      <img class="insider-image" src="img/01_edit_icon.png" alt="edit" class="btn-icon" title="редактировать">
+                      <img class="insider-image" src="img/01_edit_icon.png" name="edit" alt="edit" class="btn-icon" title="редактировать">
                     </button>
                     <button class="btn btn-delete" name="delete">
-                      <img class="insider-image"src="img/02_delete_icon.png" alt="delete" class="btn-icon" title="удалить">
+                      <img class="insider-image"src="img/02_delete_icon.png" name="delete" alt="delete" class="btn-icon" title="удалить">
                     </button>
                   </div>
                 </li>`)
@@ -36,10 +36,15 @@ export const displayPurchasesList = (purchasesArray, purchasesCategoriesList) =>
 
 export const editPurchasesItems = (e, purchasesArray) => {
   switch (e.target.name) {
-    case "check-complete":
+    case 'check-complete':
       e.target.closest('li').classList.toggle('text-through');
       break;
-  
+   case 'edit':
+      e.target.closest('li').querySelector('p').contentEditable = true;
+      break;
+    case `delete`:
+      e.target.closest('li').remove();
+    break;
     default:
       break;
   }
