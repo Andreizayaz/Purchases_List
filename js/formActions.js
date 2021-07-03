@@ -29,6 +29,9 @@ export const checkIfInputFill = ({target,target:{value}, target:{nextElementSibl
 
 export const addPurchaseItem = (e, obj, arr, inputField) => {  
   e.preventDefault();
+  if (!obj['purchase-name'].trim().length) {
+    return;
+  }
   if (arr.length) {
     if (arr.some(item=>item.hasOwnProperty(obj.category))) {
       arr.find(item => item.hasOwnProperty(obj.category))[obj.category].push({ name: obj['purchase-name'], checked: false })
@@ -41,6 +44,7 @@ export const addPurchaseItem = (e, obj, arr, inputField) => {
   arr.sort(sortArrayByPropertyName);
   localStorage.setItem('purchases', JSON.stringify(arr));
   inputField.value = '';
+  obj['purchase-name'] = '';
   let listByCategoriesNode = document.querySelector('.purchases-categories-list');
   listByCategoriesNode.innerHTML = '';
   displayPurchasesList(arr, listByCategoriesNode);
