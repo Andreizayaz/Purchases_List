@@ -30,4 +30,4 @@ selectField.addEventListener('change', (e) => setPurchaseData(e, purchaseObject)
 inputField.addEventListener('input', (e) => setPurchaseData(e, purchaseObject, addBtn));
 inputField.addEventListener('focusout', (e) => checkIfInputFill(e, addBtn));
 addBtn.addEventListener('click', (e) => addPurchaseItem(e, purchaseObject, purchasesArray, inputField));
-purchasesCategoriesList.addEventListener('click', (e, purchasesArray) => editPurchasesItems(e, purchasesArray));
+purchasesCategoriesList.addEventListener('click', (e) => editPurchasesItems(e, purchasesArray));

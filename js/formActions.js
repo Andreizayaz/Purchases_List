@@ -31,12 +31,12 @@ export const addPurchaseItem = (e, obj, arr, inputField) => {
   e.preventDefault();
   if (arr.length) {
     if (arr.some(item=>item.hasOwnProperty(obj.category))) {
-      arr.find(item => item.hasOwnProperty(obj.category))[obj.category].push(obj['purchase-name'])
+      arr.find(item => item.hasOwnProperty(obj.category))[obj.category].push({ name: obj['purchase-name'], checked: false })
     } else {
-      arr.push({ [obj.category]: [obj['purchase-name']]});
+      arr.push({ [obj.category]: [{ name: obj['purchase-name'], checked: false }]});
     }
   } else {
-    arr.push({ [obj.category]: [obj['purchase-name']]});
+    arr.push({ [obj.category]: [{ name: obj['purchase-name'], checked: false }]});
   }
   arr.sort(sortArrayByPropertyName);
   localStorage.setItem('purchases', JSON.stringify(arr));
