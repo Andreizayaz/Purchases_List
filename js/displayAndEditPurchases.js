@@ -73,6 +73,8 @@ const insertAdditionItemsBlock = ({ name, checked }) => {
 const checkItem = (e, purchasesArray) => {
   const purchaseCategory = e.target.closest('.purchases-category').querySelector('.purchases-category-header').innerText;
   const purchaseName = e.target.closest('li').querySelector('p').innerText;
-  const purchaseItem = purchasesArray.find(item => Object.keys(item)[0] === purchaseCategory)[purchaseCategory].find(item => item.name === purchaseName).checked = true;
+  const currentCheckState = e.target.checked;
+  purchasesArray.find(item => Object.keys(item)[0] === purchaseCategory)[purchaseCategory].find(item =>
+    item.name === purchaseName).checked = currentCheckState;
   localStorage.setItem('purchases', JSON.stringify(purchasesArray));
 }
