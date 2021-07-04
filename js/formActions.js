@@ -32,6 +32,9 @@ export const addPurchaseItem = (e, obj, purchases, inputField) => {
   if (!obj['purchase-name'].trim().length) {
     return;
   }
+  if (purchases.purchasesArray.find(item => Object.keys(item)[0] === obj.category)[obj.category].find(item => item.name === obj['purchase-name'])) {
+    return
+  }
   if (purchases.purchasesArray.length) {
     if (purchases.purchasesArray.some(item => item.hasOwnProperty(obj.category))) {
       purchases.purchasesArray.find(item => item.hasOwnProperty(obj.category))[obj.category].push({
