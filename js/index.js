@@ -13,11 +13,14 @@ const inputField = document.querySelector(".purchas-input");
 const addBtn = document.querySelector("#add");
 const purchasesCategoriesList = document.querySelector('.purchases-categories-list');
 
-let purchasesArray = JSON.parse(localStorage.getItem('purchases')) || [];
+// let purchasesArray = JSON.parse(localStorage.getItem('purchases')) || [];
+const purchases = {
+  purchasesArray : JSON.parse(localStorage.getItem('purchases')) || [],
+}
 
 initSelectListOptions(categories, selectField);
 
-displayPurchasesList(purchasesArray, purchasesCategoriesList);
+displayPurchasesList(purchases, purchasesCategoriesList);
 
 const purchaseObject = {
   category: selectField.value,
@@ -29,5 +32,5 @@ setTimeout(() => showTimeAndDate(time, date), 1000);
 selectField.addEventListener('change', (e) => setPurchaseData(e, purchaseObject));
 inputField.addEventListener('input', (e) => setPurchaseData(e, purchaseObject, addBtn));
 inputField.addEventListener('focusout', (e) => checkIfInputFill(e, addBtn));
-addBtn.addEventListener('click', (e) => addPurchaseItem(e, purchaseObject, purchasesArray, inputField));
-purchasesCategoriesList.addEventListener('click', (e) => editPurchasesItems(e, purchasesArray));
+addBtn.addEventListener('click', (e) => addPurchaseItem(e, purchaseObject, purchases, inputField));
+purchasesCategoriesList.addEventListener('click', (e) => editPurchasesItems(e, purchases));

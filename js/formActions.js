@@ -27,27 +27,40 @@ export const checkIfInputFill = ({target,target:{value}, target:{nextElementSibl
   }
 }
 
-export const addPurchaseItem = (e, obj, arr, inputField) => {  
+export const addPurchaseItem = (e, obj, purchases, inputField) => {
   e.preventDefault();
   if (!obj['purchase-name'].trim().length) {
     return;
   }
-  if (arr.length) {
-    if (arr.some(item=>item.hasOwnProperty(obj.category))) {
-      arr.find(item => item.hasOwnProperty(obj.category))[obj.category].push({ name: obj['purchase-name'], checked: false })
+  if (purchases.purchasesArray.length) {
+    if (purchases.purchasesArray.some(item => item.hasOwnProperty(obj.category))) {
+      purchases.purchasesArray.find(item => item.hasOwnProperty(obj.category))[obj.category].push({
+        name: obj['purchase-name'],
+        checked: false
+      })
     } else {
-      arr.push({ [obj.category]: [{ name: obj['purchase-name'], checked: false }]});
+      purchases.purchasesArray.push({
+        [obj.category]: [{
+          name: obj['purchase-name'],
+          checked: false
+        }]
+      });
     }
   } else {
-    arr.push({ [obj.category]: [{ name: obj['purchase-name'], checked: false }]});
+    purchases.purchasesArray.push({
+      [obj.category]: [{
+        name: obj['purchase-name'],
+        checked: false
+      }]
+    });
   }
-  arr.sort(sortArrayByPropertyName);
-  localStorage.setItem('purchases', JSON.stringify(arr));
+  purchases.purchasesArray.sort(sortArrayByPropertyName);
+  localStorage.setItem('purchases', JSON.stringify(purchases.purchasesArray));
   inputField.value = '';
   obj['purchase-name'] = '';
   let listByCategoriesNode = document.querySelector('.purchases-categories-list');
   listByCategoriesNode.innerHTML = '';
-  displayPurchasesList(arr, listByCategoriesNode);
+  displayPurchasesList(purchases, listByCategoriesNode);
   return;
 }
 

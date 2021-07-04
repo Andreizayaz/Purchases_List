@@ -1,12 +1,12 @@
 'use strict'
 
-export const displayPurchasesList = (purchasesArray, purchasesCategoriesList) => {
-  if (purchasesArray.length) {
+export const displayPurchasesList = (purchases, purchasesCategoriesList) => {
+  if (purchases.purchasesArray.length) {
     if (purchasesCategoriesList.previousElementSibling) {
       purchasesCategoriesList.previousElementSibling.remove();
     }
-    purchasesArray = purchasesArray.sort();
-    purchasesArray.forEach((item,index) => {
+    purchases.purchasesArray = purchases.purchasesArray.sort();
+    purchases.purchasesArray.forEach((item, index) => {
       purchasesCategoriesList.insertAdjacentHTML('beforeend', `<li class="purchases-category">
               <h3 class="purchases-category-header">${Object.keys(item)[0]}</h3>
               <ul class = "purchases-list-by-category"></ul>
@@ -16,23 +16,23 @@ export const displayPurchasesList = (purchasesArray, purchasesCategoriesList) =>
         listByCategory.insertAdjacentHTML('beforeend', insertAdditionItemsBlock(item))
       })
     })
-    console.log(purchasesArray);
+    console.log(purchases.purchasesArray);
     return;
   }
 
   purchasesCategoriesList.insertAdjacentHTML('beforebegin', '<p class="text-info">Список продуктов для покупки пуст</p>');
 }
 
-export const editPurchasesItems = (e, purchasesArray) => {
+export const editPurchasesItems = (e, purchases) => {
   switch (e.target.name) {
     case 'check-complete':
-      checkItem(e, purchasesArray);
+      checkItem(e, purchases);
       break;
    case 'edit':
       e.target.closest('li').querySelector('p').contentEditable = true;
       break;
     case `delete`:
-      deleteItem(e, purchasesArray);
+      deleteItem(e, purchases);
       
     break;
     default:
@@ -70,38 +70,38 @@ const insertAdditionItemsBlock = ({ name, checked }) => {
                 </li>`
 }
 
-const checkItem = (e, purchasesArray) => {
+const checkItem = (e, purchases) => {
   const purchaseCategory = e.target.closest('.purchases-category').querySelector('.purchases-category-header').innerText;
   const purchaseName = e.target.closest('li').querySelector('p').innerText;
   const currentCheckState = e.target.checked;
    e.target.closest('li').classList.toggle('text-through');
-  purchasesArray.find(item => Object.keys(item)[0] === purchaseCategory)[purchaseCategory].find(item =>
+  purchases.purchasesArray.find(item => Object.keys(item)[0] === purchaseCategory)[purchaseCategory].find(item =>
     item.name === purchaseName).checked = currentCheckState;
-  localStorage.setItem('purchases', JSON.stringify(purchasesArray));
+  localStorage.setItem('purchases', JSON.stringify(purchases.purchasesArray));
 }
 
-const editItem = (e, purchasesArray) => {
+const editItem = (e, purchases) => {
   const purchaseCategory = e.target.closest('.purchases-category').querySelector('.purchases-category-header').innerText;
   const purchaseName = e.target.closest('li').querySelector('p').innerText;
 }
 
-const deleteItem = (e, purchasesArray) => {
+const deleteItem = (e, purchases) => {
   const purchaseCategory = e.target.closest('.purchases-category').querySelector('.purchases-category-header').innerText;
   const purchaseName = e.target.closest('li').querySelector('p').innerText;
-  purchasesArray = JSON.parse(localStorage.getItem('purchases'));
-  const newItemsInPurchasesArrayAfterDelete = purchasesArray.find(item => Object.keys(item)[0] === purchaseCategory)[purchaseCategory].filter(item =>
+  purchases.purchasesArray = JSON.parse(localStorage.getItem('purchases'));
+  const newItemsInPurchasesArrayAfterDelete = purchases.purchasesArray.find(item => Object.keys(item)[0] === purchaseCategory)[purchaseCategory].filter(item =>
     item.name !== purchaseName);
-  purchasesArray.find(item => Object.keys(item)[0] === purchaseCategory)[purchaseCategory] = newItemsInPurchasesArrayAfterDelete;
-  const category = purchasesArray.find(item => Object.keys(item)[0] === purchaseCategory)[purchaseCategory];  
+  purchases.purchasesArray.find(item => Object.keys(item)[0] === purchaseCategory)[purchaseCategory] = newItemsInPurchasesArrayAfterDelete;
+  const category = purchases.purchasesArray.find(item => Object.keys(item)[0] === purchaseCategory)[purchaseCategory];
   if (!category.length) {
-    purchasesArray = purchasesArray.filter(item => Object.keys(item)[0] !== purchaseCategory);
+    purchases.purchasesArray = purchases.purchasesArray.filter(item => Object.keys(item)[0] !== purchaseCategory);
     e.target.closest('li.purchases-category').remove();
-    if (!purchasesArray.length) {
+    if (!purchases.purchasesArray.length) {
       document.querySelector('.purchases-categories-list').insertAdjacentHTML('beforebegin', '<p class="text-info">Список продуктов для покупки пуст</p>');
       localStorage.removeItem('purchases');
     }
   } else {
     e.target.closest('li').remove();    
   }
-  localStorage.setItem('purchases', JSON.stringify(purchasesArray));
+  localStorage.setItem('purchases', JSON.stringify(purchases.purchasesArray));
 }
