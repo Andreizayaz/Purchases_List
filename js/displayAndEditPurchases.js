@@ -29,7 +29,7 @@ export const editPurchasesItems = (e, purchases) => {
       checkItem(e, purchases);
       break;
    case 'edit':
-      e.target.closest('li').querySelector('p').contentEditable = true;
+      editItem(e, purchases);
       break;
     case `delete`:
       deleteItem(e, purchases);
@@ -82,7 +82,14 @@ const checkItem = (e, purchases) => {
 
 const editItem = (e, purchases) => {
   const purchaseCategory = e.target.closest('.purchases-category').querySelector('.purchases-category-header').innerText;
-  const purchaseName = e.target.closest('li').querySelector('p').innerText;
+  const purchaseName = e.target.closest('li').querySelector('p');
+  const beforeEditPurchaseName = purchaseName.innerText;
+  purchaseName.contentEditable = true;
+  purchaseName.classList.add('border-text');
+  purchaseName.addEventListener('blur', (e) => {
+    changePurchasesItem(e, purchases, purchaseCategory, purchaseName, beforeEditPurchaseName);
+    console.log(e.target.innerText);
+  })
 }
 
 const deleteItem = (e, purchases) => {
@@ -101,7 +108,17 @@ const deleteItem = (e, purchases) => {
       localStorage.removeItem('purchases');
     }
   } else {
-    e.target.closest('li').remove();    
+    e.target.closest('li').remove();
   }
   localStorage.setItem('purchases', JSON.stringify(purchases.purchasesArray));
+}
+
+const changePurchasesItem = (e, purchases, purchaseCategory, purchaseName, beforeEditPurchaseName) => {
+  if (!e.target.innerText.trim().length) {
+    return;
+  }
+  purchases.purchasesArray.find(item => Object.keys(item)[0] === purchaseCategory)[purchaseCategory].find(item => item.name === beforeEditPurchaseName).name = purchaseName.innerText;
+  localStorage.setItem('purchases', JSON.stringify(purchases.purchasesArray));
+  purchaseName.classList.remove('border-text');
+  purchaseName.contentEditable = false;
 }
