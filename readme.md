@@ -23,5 +23,8 @@ For edit item just do following steps:
 2. Edit purchase name.
 3. Click mouse in any place out of input field.
 
+## Example interface:
+![application interface](img/03_Application_interface.png)
+
 
 # Enjoy of using application!
