@@ -1,10 +1,3 @@
-<style>
-  .icon{
-    width:100px;
-    height:100px;
-  }
-</style>
-
 # Purchases List Application
 
 This is application for creating purchases list for going to shop.
